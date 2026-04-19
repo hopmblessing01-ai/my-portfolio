@@ -33,9 +33,6 @@ function ProfilePanel({ profile, avatarSrc, isOpen, onToggle }) {
                   <strong>Name:</strong><br /> <span className="profile-detail-value">{profile.name}</span>
                 </p>
                 <p>
-                  <strong>Date of birth:</strong><br /> <span className="profile-detail-value">{profile.birth}</span>
-                </p>
-                <p>
                   <strong>Address:</strong><br /> <span className="profile-detail-value">{profile.location}</span>
                 </p>
                 <p>

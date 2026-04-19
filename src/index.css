@@ -35,6 +35,11 @@
   --color-theme-icon: #4b5563;
   --shadow-avatar: 0 4px 18px rgba(0, 0, 0, 0.08);
   --rainbow-height: 10px;
+  --portfolio-modal-scrim: rgba(17, 24, 39, 0.52);
+  --portfolio-modal-shadow: 0 24px 60px rgba(0, 0, 0, 0.14);
+  --portfolio-modal-chrome-bg: rgba(255, 255, 255, 0.92);
+  --portfolio-modal-chrome-color: var(--color-text);
+  --portfolio-modal-dot-inactive: rgba(0, 0, 0, 0.22);
 }
 
 [data-theme='dark'] {
@@ -64,6 +69,11 @@
   --color-contact-label: #9aa3b8;
   --color-theme-icon: #c5cad6;
   --shadow-avatar: 0 4px 22px rgba(0, 0, 0, 0.35);
+  --portfolio-modal-scrim: rgba(6, 9, 18, 0.88);
+  --portfolio-modal-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  --portfolio-modal-chrome-bg: rgba(0, 0, 0, 0.55);
+  --portfolio-modal-chrome-color: #fff;
+  --portfolio-modal-dot-inactive: rgba(255, 255, 255, 0.28);
 }
 
 * {
@@ -591,7 +601,7 @@ p {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.35rem;
+  gap: 0.85rem;
 }
 
 .portfolio-item {
@@ -628,7 +638,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, rgba(12, 17, 30, 0) 0%, rgba(12, 17, 30, 0.76) 100%);
+  background: linear-gradient(180deg, rgba(41, 98, 255, 0) 0%, rgba(41, 98, 255, 0.78) 100%);
   padding: 0.72rem 0.85rem;
   z-index: 1;
   transform: translateY(0);
@@ -663,6 +673,12 @@ p {
 .overlay-content h4 {
   margin: 0;
   font-size: 1.06rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .overlay-content p {
@@ -670,6 +686,174 @@ p {
   font-size: 0.88rem;
   line-height: 1.45;
   color: rgba(255, 255, 255, 0.95);
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  line-clamp: 5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.portfolio-item {
+  cursor: pointer;
+}
+
+.portfolio-count-badge {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: rgba(12, 17, 30, 0.78);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  z-index: 2;
+  letter-spacing: 0.02em;
+}
+
+.portfolio-modal {
+  position: fixed;
+  inset: 0;
+  background: var(--portfolio-modal-scrim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 9999;
+  backdrop-filter: blur(6px);
+}
+
+.portfolio-modal-content {
+  position: relative;
+  background: var(--bg-surface);
+  border-radius: 14px;
+  width: min(1000px, 100%);
+  max-height: calc(100vh - 3rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--portfolio-modal-shadow);
+  border: 1px solid var(--color-border-soft);
+}
+
+.portfolio-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--portfolio-modal-chrome-bg);
+  color: var(--portfolio-modal-chrome-color);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.portfolio-modal-close:hover {
+  background: #ff5416;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.portfolio-modal-stage {
+  position: relative;
+  background: var(--bg-sheet);
+  height: min(70vh, 620px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.portfolio-modal-stage img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+}
+
+.portfolio-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--portfolio-modal-chrome-bg);
+  color: var(--portfolio-modal-chrome-color);
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.portfolio-modal-nav:hover {
+  background: #ff5416;
+  color: #fff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.portfolio-modal-nav.prev {
+  left: 0.9rem;
+}
+
+.portfolio-modal-nav.next {
+  right: 0.9rem;
+}
+
+.portfolio-modal-info {
+  padding: 1.1rem 1.4rem 1.3rem;
+  color: var(--color-text);
+  overflow-y: auto;
+}
+
+.portfolio-modal-info h4 {
+  margin: 0 0 0.45rem;
+  font-size: 1.15rem;
+  color: var(--color-text-strong);
+}
+
+.portfolio-modal-info p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--color-testimonial-body);
+}
+
+.portfolio-modal-dots {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-top: 0.9rem;
+}
+
+.portfolio-modal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--portfolio-modal-dot-inactive);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.portfolio-modal-dot.active {
+  background: #ff5416;
+  transform: scale(1.25);
 }
 
 .pager {
@@ -910,6 +1094,24 @@ p {
   min-height: 42px;
   padding: 0.55rem;
   font: inherit;
+  outline: none;
+  box-shadow: 0 0 0 0 rgba(255, 84, 22, 0);
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 0 2px #ff5416;
+  animation: contact-focus-pulse 0.5s ease;
+}
+
+@keyframes contact-focus-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 84, 22, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 2px #ff5416;
+  }
 }
 
 .contact-form textarea {
@@ -1260,5 +1462,27 @@ p {
 
   .overlay-content p {
     font-size: 0.82rem;
+  }
+
+  .portfolio-modal-stage {
+    height: 55vh;
+  }
+
+  .portfolio-modal-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+  }
+
+  .portfolio-modal-info {
+    padding: 0.9rem 1rem 1.1rem;
+  }
+
+  .portfolio-modal-info h4 {
+    font-size: 1rem;
+  }
+
+  .portfolio-modal-info p {
+    font-size: 0.85rem;
   }
 }

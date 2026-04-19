@@ -18,10 +18,9 @@ export const resumeDownloadUrl = `https://drive.google.com/uc?export=download&id
 export const profile = {
   name: 'Blessing Igwegbe',
   role: 'CRM Automation & Project Manager',
-  location: 'Combo Mount, Breckhill Road, Mapperley, Nottingham, England NG3 5JP, United Kingdom',
-  email: 'hopmblessing01@gmail.com',
+  location: 'Nottingham, England NG3 5JP, United Kingdom',
+  email: 'hopmblessing@gmail.com',
   phone: '+44 7543 196059',
-  birth: 'November 14, 1994',
   about:
     'Welcome to my portfolio. I am a CRM Automation specialist and project manager focused on helping businesses replace manual work with practical systems that scale. I partner with teams to map their existing processes, identify bottlenecks, and implement clear workflows that improve consistency, speed, and visibility across operations. My work combines strategic planning with hands-on delivery, from CRM setup and automation design to reporting structures and stakeholder communication. Here you can explore my professional experience, selected project samples, and the methods I use to turn complex operational needs into reliable, user-friendly systems that support long-term growth.',
 }
@@ -126,28 +125,46 @@ export const portfolioFilters = [
 
 export const portfolioItems = [
   {
-    title: 'HubSpot Client Lifecycle Setup',
+    title: 'Mobile Auto Repair CRM & Automation | Voice & Chatbot Agent',
     category: 'CRM Systems',
-    image: 'https://picsum.photos/seed/crm1/600/600',
-    description: 'Designed end-to-end lifecycle pipelines for leads, onboarding, and retention with clear stage governance.',
+    image: ['/portfolio/fieldd/1.png', '/portfolio/fieldd/2.png', '/portfolio/fieldd/3.png', '/portfolio/fieldd/4.png'],
+    description: 'Built an integrated operations and customer communication system for a Dubai-based mobile auto repair business using Fieldd, Google Workspace, Google Calendar, Zapier, QuickBooks, Stripe, WhatsApp automation, and a Vapi voice agent. The solution covered technician scheduling, booking workflows, lead capture, AI chatbot and voice assistant integration, customer event notifications, and internal support processes to streamline field service operations and improve response speed.',
   },
   {
-    title: 'Salesforce and Pipedrive Migration Plan',
+    title: 'Seamless Persona Registration & Zoho Lead Integration on WordPress',
     category: 'CRM Systems',
-    image: 'https://picsum.photos/seed/crm2/600/600',
-    description: 'Mapped and migrated records, fields, and workflows to ensure continuity across sales and delivery teams.',
+    description: 'Implemented a seamless lead capture system on a WordPress website by embedding a custom Persona registration form. When customers register, their data is automatically structured in Zoho CRM to create new leads, ensuring smooth tracking and management of incoming users.',
+    image: ['/portfolio/persona/1.png', '/portfolio/persona/2.png', '/portfolio/persona/3.png', '/portfolio/persona/4.png', '/portfolio/persona/5.png'],
   },
   {
-    title: 'n8n Lead Intake and Routing Workflow',
-    category: 'Automation',
-    image: 'https://picsum.photos/seed/auto1/600/600',
-    description: 'Automated lead capture, validation, and smart routing to reduce manual triage and speed first response.',
+    title: 'Monday.com Workflows and Automation',
+    category: 'CRM Systems',
+    description: 'Created job boards that are linked to update information from one board to another without the need for back and forth and manual data entery. Created automations for the workflows, and integrations of monday to google apps relevant to the company',
+    image: ['/portfolio/monday/1.png', '/portfolio/monday/2.png']
   },
   {
-    title: 'Zapier + Make Finance Approval Automation',
+    title: 'Teams Meeting Note Taker | N8N',
     category: 'Automation',
-    image: 'https://picsum.photos/seed/auto2/600/600',
-    description: 'Connected forms, approvals, and notifications across finance tools for faster, auditable decisions.',
+    description: 'Automated Microsoft Teams meeting notes workflow that manages meetings end-to-end with no manual effort. It monitors Outlook for new meetings, auto-accepts invites, joins Teams meetings at the scheduled time, retrieves transcripts after the meeting, and uses AI to generate structured summaries, decisions, and action items. Final notes are automatically shared with all attendees, with built-in validation, error handling, and logging to prevent duplicates and failures.',
+    image: ['/portfolio/notetaker/1.png', '/portfolio/notetaker/2.png', '/portfolio/notetaker/3.png', '/portfolio/notetaker/4.png', '/portfolio/notetaker/5.png', '/portfolio/notetaker/6.png', '/portfolio/notetaker/7.png', '/portfolio/notetaker/8.png', '/portfolio/notetaker/9.png'],
+  },
+  {
+    title: 'Automated Response to Unanswered Questions | N8N',
+    category: 'Automation',
+    image: ['/portfolio/automated-response/1.png'],
+    description: 'Daily 4 PM Microsoft Teams follow-up automation that detects and responds to unanswered messages automatically. The workflow scans all relevant Teams and primary channels, reviews messages from the past week, and identifies items without replies. Each message is analyzed by an AI agent, which generates a context-aware response using predefined templates and posts the reply in the correct channel—ensuring no client or support message is missed while keeping communication consistent and timely.',
+  },
+  {
+    title: 'Monthly Checkin Workflow | N8N',
+    category: 'Automation',
+    image: ['/portfolio/monthly-checkin/1.png'],
+    description: 'AI-powered Microsoft Teams check-in system built with n8n and Microsoft Graph. The automation detects project phase directly from Team names, monitors activity by analyzing recent channel messages, and sends monthly, phase-appropriate client check-ins only when needed. It prevents duplicate outreach, requires no manual tracking or databases, and runs fully on a schedule - delivering consistent, accurate client communication at scale with zero ongoing management.',
+  },
+  {
+    title: 'Workflows in Taxdome',
+    category: 'CRM Systems',
+    image: ['/portfolio/taxdome/1.png', '/portfolio/taxdome/2.png', '/portfolio/taxdome/3.png'],
+    description: 'Created and managed workflows for a finance company in Taxdome.',
   },
   {
     title: 'AI Triage Assistant for Client Support',
@@ -193,7 +210,7 @@ export const testimonials = [
     date: 'Mar 30, 2026',
     text: 'great experience working with Blessing! She was able to help us fix our KYC workflow when we got stuck Very happy with her work',
     initials: 'AM',
-    image: 'ahmed.jpg',
+    image: 'testimonials/ahmed.jpg',
     color: '#4566dc',
   },
   {
@@ -202,7 +219,7 @@ export const testimonials = [
     text: 'Very good communication, very friendly and knowledgeable. Over and above',
     initials: 'DC',
     color: '#22c55e',
-    image: 'david.jpg',
+    image: 'testimonials/david.jpg',
   },
   {
     name: 'Natally Huff',
@@ -224,7 +241,7 @@ export const testimonials = [
     text: 'Blessing was awesome - She took initiative and acted quickly. We only ended the contract after a short period because of some changes in what we are looking for.',
     initials: 'CM',
     color: '#ef4444',
-    image: 'conrad.png',
+    image: 'testimonials/conrad.png',
   }
 ]
 
