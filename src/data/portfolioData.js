@@ -38,9 +38,9 @@ export const resumeGroups = [
       },
       {
         title: 'ILX',
-        subtitle: 'APM FQ and APM MQ',
+        subtitle: 'APM FQ',
         period: '2025',
-        text: 'Completed project management qualifications focused on structured delivery, governance, and effective program execution.',
+        text: 'Completed a project management qualification focused on structured delivery, governance, and effective program execution.',
         color: '#2563eb',
       },
     ],
