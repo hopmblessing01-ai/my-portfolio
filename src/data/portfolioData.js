@@ -169,37 +169,37 @@ export const portfolioItems = [
   {
     title: 'AI Triage Assistant for Client Support',
     category: 'AI Comms',
-    image: 'https://picsum.photos/seed/ai1/600/600',
+    image: '',
     description: 'Built an AI assistant that categorizes requests and guides users to the right channel instantly.',
   },
   {
     title: 'Voice Agent with Twilio and WhatsApp',
     category: 'AI Comms',
-    image: 'https://picsum.photos/seed/ai2/600/600',
+    image: '',
     description: 'Implemented voice and message automation for booking, follow-up, and client communication handoff.',
   },
   {
     title: 'Portfolio RAID Dashboard and Governance',
     category: 'Project Ops',
-    image: 'https://picsum.photos/seed/ops1/600/600',
+    image: '',
     description: 'Built portfolio controls with RAID visibility, action ownership, and recurring reporting cadence.',
   },
   {
     title: 'SOP Library and Workflow Mapping Rollout',
     category: 'Project Ops',
-    image: 'https://picsum.photos/seed/ops2/600/600',
+    image: '',
     description: 'Created SOP structures and process maps that improved handovers and operational consistency.',
   },
   {
     title: 'Cross-Team Workspace in Notion and ClickUp',
     category: 'Tools',
-    image: 'https://picsum.photos/seed/tools1/600/600',
+    image: '',
     description: 'Set up centralized project and knowledge workspaces for tracking tasks, risks, and team collaboration.',
   },
   {
     title: 'Executive Reporting with Miro and Dashboards',
     category: 'Tools',
-    image: 'https://picsum.photos/seed/tools2/600/600',
+    image: '',
     description: 'Delivered leadership-ready visual reporting for delivery status, resource planning, and priorities.',
   },
 ]
